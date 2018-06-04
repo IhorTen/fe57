@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        .app{
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+        .app__users{
+            padding: 70px 20px 0 20px;
+            background-color: #eee;
+            position: relative;
+        }
+        .app__profile{
+            padding: 20px;
+        }
+        .app__users,
+        .app__profile{
+            overflow-y: auto;
+            width: 50%;
+        }
+
+        .users,
+        .followers{
+            width: 100%;
+        }
+
+        .app__search{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            /* align-items: center; */
+            height: 70px;
+            justify-content: center;
+            padding: 20px 0;
+        }
+        .app__search-inp,
+        .app__search-btn{
+            outline: none;
+        }
+        .app__search-inp{
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+        }
+        .app__search-btn{
+            background-color: #fff;
+            padding: 0;
+            border: none;
+            width: 100px;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .app__users-refresh{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background-color: #fff;
+            padding: 0;
+            border: none;
+            width: 100px;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            height: 40px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    <div class="app">
+        <div class="app__users">
+            <button class="app__users-refresh">Refresh</button>
+            <div class="app__search">
+                <input type="text" class="app__search-inp">
+                <button class="app__search-btn">Search</button>
+            </div>
+            <table class="users" id="users" border="1" cellpadding="10" cellspacing="0">
+            </table>
+        </div>
+        <div class="app__profile">
+            <div class="profile" id="profile">
+
+            </div>
+            <table class="followers" id="followers" border="1" cellpadding="10" cellspacing="0">
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

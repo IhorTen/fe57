@@ -1,0 +1,9 @@
+<h1>{{ test }}</h1>
+<ul>
+  <li *ngFor="let user of users; let i = index">
+    {{user.name}} - <b>{{user.age}}</b>
+    <button (click)="removeUser(i)">REMOVE</button>
+  </li>
+</ul>
+
+<h2 *ngIf="x">))))))))))</h2>
