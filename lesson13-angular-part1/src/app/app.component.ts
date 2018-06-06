@@ -5,8 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  test = 'TEST';
+  title = 'App1';
   users = [
     {
       name: 'Bob',
@@ -14,16 +15,26 @@ export class AppComponent {
     },
     {
       name: 'Ivan',
-      age: 26
+      age: 35
     },
     {
-      name: 'Kate',
-      age: 20
+      name: 'Ivan',
+      age: 38
+    },
+    {
+      name: 'Ivan',
+      age: 34
+    },
+    {
+      name: 'Ivan',
+      age: 31
     }
   ]
-  x = true;
 
   removeUser(i){
     this.users.splice(i, 1);
   }
+
+  x = false;
+
 }

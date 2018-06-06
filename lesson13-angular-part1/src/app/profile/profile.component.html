@@ -1,0 +1,15 @@
+<h1>Profile</h1>
+
+<form (submit)="addPost()">
+  <input [(ngModel)]="newPost.title" name="postTitle" type="text"> <br>
+  <textarea [(ngModel)]="newPost.body" name="postBody" cols="40" rows="5"></textarea><br>
+  <button type="submit">Add post</button>
+</form>
+
+<ul>
+  <li *ngFor="let p of posts; let i = index">
+    <h4>{{p.title}}</h4>
+    <p>{{p.body}}</p>
+    <button (click)="removePost(i)">REMOVE</button>
+  </li>
+</ul>
