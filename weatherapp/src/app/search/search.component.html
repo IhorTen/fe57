@@ -1,0 +1,7 @@
+<!-- <a routerLink="/">Start</a><br>
+<a routerLink="/forecast">Forecast</a><br> -->
+
+<form class="search" (submit)="searchCity()">
+    <input [(ngModel)]="city" type="text" class="search__inp" placeholder="Search city" name="searchCity">
+    <button type="submit" class="search__btn">Search</button>
+</form>
