@@ -1,0 +1,96 @@
+<!-- <div *ngIf="user">
+  <br><br>
+  <table border="1" cellpadding="10" cellspacing="0">
+    <tr align="center">
+      <td
+        *ngIf="followers"
+      >Followers: <br><b (click)="openFollowers()">{{followers.length}}</b></td>
+      <td
+        *ngIf="followings"
+      >Followings: <br><b (click)="openFollowings()">{{followings.length}}</b></td>
+    </tr>
+  </table>
+  <h1>{{user.username}}</h1>
+  <h3 *ngIf="!editing">
+    <span *ngIf="user.name">{{user.name}}</span>
+    <span *ngIf="user.surname">{{user.surname}}</span>
+  </h3>
+  <div *ngIf="editing">
+    <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name">
+    <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname">
+  </div>
+  <button (click)="toEdit()" *ngIf="me && !editing">Edit</button>
+  <button (click)="updateUser()" *ngIf="editing">Save</button>
+  <add-post
+    *ngIf="me"
+    [user]="user"
+    (onAddingPost)="pushPost($event)"
+  ></add-post>
+  <post
+    [index]="i"
+    (onDeletingPost)="deletePost($event)"
+    (onLikingPost)="likePost($event)"
+    *ngFor="let post of posts; let i = index"
+    [post]="post"
+  ></post>
+
+  <subscriptions
+    *ngIf="subscriptions"
+    [users]="subscriptions"
+  ></subscriptions>
+</div> -->
+
+
+
+<div class="profile-page" *ngIf="user">
+
+    <div class="wrapper">
+    <div class="header header-filter" style="background-image: url('./assets/bootstrap-mk/img/examples/city.jpg');"></div>
+
+    <div class="main main-raised">
+      <div class="profile-content">
+              <div class="container">
+                  <div class="row">
+                      <div class="profile col-md-6 col-md-offset-3">
+                          <div class="avatar">
+                              <img src="../assets/bootstrap-mk/img/christian.jpg" alt="Circle Image" class="img-circle img-responsive img-raised">
+                          </div>
+                          <div class="col-md-6">
+                              <div class="name">
+                                  <h3 class="title">{{user.username}}</h3>
+                                  <h6 *ngIf="!editing">
+                                    <span *ngIf="user.name">{{user.name}}</span>
+                                    <span *ngIf="user.surname">{{user.surname}}</span>
+                                  </h6>
+                              </div>
+                              <!-- <h3 *ngIf="!editing">
+                                <span *ngIf="user.name">{{user.name}}</span>
+                                <span *ngIf="user.surname">{{user.surname}}</span>
+                              </h3> -->
+                              <div *ngIf="editing">
+                                <input class="form-control" type="text" name="name" #name="ngModel" [(ngModel)]="user.name">
+                                <input class="form-control" type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname">
+                              </div>
+                              <button class="btn btn-primary btn-sm" (click)="toEdit()" *ngIf="me && !editing">Edit</button>
+                              <button class="btn btn-success btn-sm" (click)="updateUser()" *ngIf="editing">Save</button>
+                          </div>
+                          <div class="col-md-6">
+                            <br>
+                            <br>
+                            <div *ngIf="followers" (click)="openFollowers()">
+                              <b>{{followers.length}}</b> подписчиков
+                            </div>
+                            <div *ngIf="followings" (click)="openFollowings()">
+                              <b>{{followings.length}}</b> подписок
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+
+    </div>
+
+
+  </div>

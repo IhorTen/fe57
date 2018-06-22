@@ -1,0 +1,90 @@
+<!-- <a routerLink="/signup">Signup</a>
+<form (ngSubmit)="signin()">
+  <input type="email" [(ngModel)]="user.email" name="email" #email="ngModel" email><br>
+  <div *ngIf="email.invalid && (email.dirty || email.touched)">
+    <div *ngIf="email.errors.required">Email is required</div>
+    <div *ngIf="email.errors.email">Email is invalid</div>
+  </div>
+  <input type="password" [(ngModel)]="user.password" name="password" #password="ngModel" minlength="6" required><br>
+  <div *ngIf="password.invalid && (password.dirty || password.touched)">
+    <div *ngIf="password.errors.required">Password is required</div>
+    <div *ngIf="password.errors.minlength">
+      Minlength is {{password.errors.minlength.requiredLength}} characters. You have entered {{password.errors.minlength.actualLength}}.
+    </div>
+  </div>
+  <button type="submit">Login</button>
+</form> -->
+
+
+
+<form class="form" (ngSubmit)="signin()">
+  <div class="header header-primary text-center">
+    <h4>Sign In</h4>
+    <!-- <div class="social-line">
+      <a href="#pablo" class="btn btn-simple btn-just-icon">
+        <i class="fa fa-facebook-square"></i>
+      </a>
+      <a href="#pablo" class="btn btn-simple btn-just-icon">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="#pablo" class="btn btn-simple btn-just-icon">
+        <i class="fa fa-google-plus"></i>
+      </a>
+    </div> -->
+  </div>
+  <!-- <a routerLink="/signup">Signup</a> -->
+  <p class="text-divider">
+    <a routerLink="/signup">Don't have an account? Signup!</a>
+  </p>
+  <p class="text-divider" *ngIf="errors">{{errors.message}}</p>
+  <br>
+  <div class="content">
+
+    <div class="input-group">
+      <span class="input-group-addon">
+        <!-- <i class="material-icons">email</i> -->
+        <i class="fa fa-envelope"></i>
+      </span>
+      <input class="form-control" placeholder="Email..." type="email" [(ngModel)]="user.email" name="email" #email="ngModel" email>
+      <br>
+      <div *ngIf="errors">
+        <div>{{errors.errors.email}}</div>
+      </div>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors.required">Email is required</div>
+        <div *ngIf="email.errors.email">Email is invalid</div>
+      </div>
+    </div>
+    <br>
+
+    <div class="input-group">
+      <span class="input-group-addon">
+        <!-- <i class="material-icons">lock_outline</i> -->
+        <i class="fa fa-lock"></i>
+      </span>
+      <input placeholder="Password..." class="form-control" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" minlength="6" required/>
+      <br>
+      <div *ngIf="errors">
+        <div>{{errors.errors.password}}</div>
+      </div>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.errors.required">Password is required</div>
+        <div *ngIf="password.errors.minlength">
+          Minlength is {{password.errors.minlength.requiredLength}} characters. You have entered {{password.errors.minlength.actualLength}}.
+        </div>
+      </div>
+    </div>
+
+    <!-- If you want to add a checkbox to this form, uncomment this code
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="optionsCheckboxes" checked>
+        Subscribe to newsletter
+      </label>
+    </div> -->
+  </div>
+  <div class="footer text-center">
+    <button type="submit" class="btn btn-simple btn-primary btn-lg">Get Started</button>
+  </div>
+</form>

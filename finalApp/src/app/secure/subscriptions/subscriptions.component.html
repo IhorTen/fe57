@@ -1,0 +1,7 @@
+<div *ngIf="users">
+    <br><br>
+    <h3>{{users.type}}</h3>
+    <div *ngFor="let u of users.list">
+        {{u.id}} - {{u.username}}
+    </div>
+</div>

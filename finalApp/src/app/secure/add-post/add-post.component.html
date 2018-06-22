@@ -1,0 +1,13 @@
+<form *ngIf="post" (ngSubmit)="addPost()">
+  <input type="text" name="title" #title="ngModel" [(ngModel)]="post.title" required minlength="5"> <br>
+  <div *ngIf="(title.dirty || title.touched) && title.errors && title.value !== ''">
+    <div *ngIf="title.errors.required">Title is required</div>
+    <div *ngIf="title.errors.minlength">Minlength of the title is {{title.errors.minlength.requiredLength}}. You shold enter {{title.errors.minlength.requiredLength - title.errors.minlength.actualLength}} characters.</div>
+  </div>
+  <textarea name="body" cols="30" rows="4" #body="ngModel" [(ngModel)]="post.body" required minlength="20"></textarea> <br>
+  <div *ngIf="(body.dirty || body.touched) && body.errors && body.value !== ''">
+    <div *ngIf="body.errors.required">Body is required</div>
+    <div *ngIf="body.errors.minlength">Minlength of the body is {{body.errors.minlength.requiredLength}}. You shold enter {{body.errors.minlength.requiredLength - body.errors.minlength.actualLength}} characters.</div>
+  </div>
+  <button type="submit">Add post</button>
+</form>

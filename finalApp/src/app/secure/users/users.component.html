@@ -1,0 +1,10 @@
+<div *ngIf="users">
+  <div *ngFor="let u of users">
+    <a routerLink="/profile/{{u.id}}">{{u.username}}</a>
+    <follow-btn
+      *ngIf="currentUser"
+      [to]="u.id"
+      [from]="currentUser.id"
+    ></follow-btn>
+  </div>
+</div>

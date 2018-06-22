@@ -1,0 +1,4 @@
+<div *ngIf="!(from === to)">
+  <button *ngIf="!isFollowed" (click)="follow()">Follow</button>
+  <div *ngIf="isFollowed">Followed</div>
+</div>

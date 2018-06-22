@@ -1,0 +1,124 @@
+<!-- <form (ngSubmit)="signup()">
+  <h3 *ngIf="errors">{{errors.message}}</h3>
+  <input type="text" [(ngModel)]="user.username" name="username" #username="ngModel" required minlength="2"><br>
+  <div *ngIf="errors">
+    <div>{{errors.errors.username}}</div>
+  </div>
+  <div *ngIf="username.invalid && (username.dirty || username.touched)">
+    <div *ngIf="username.errors.required">Username is required</div>
+    <div *ngIf="username.errors.minlength">
+      Minlength is {{username.errors.minlength.requiredLength}} characters. You have entered {{username.errors.minlength.actualLength}}.
+    </div>
+  </div>
+  <input type="email" [(ngModel)]="user.email" name="email" #email="ngModel" email><br>
+  <div *ngIf="errors">
+    <div>{{errors.errors.email}}</div>
+  </div>
+  <div *ngIf="email.invalid && (email.dirty || email.touched)">
+    <div *ngIf="email.errors.required">Email is required</div>
+    <div *ngIf="email.errors.email">Email is invalid</div>
+  </div>
+  <input type="password" [(ngModel)]="user.password" name="password" #password="ngModel" minlength="6" required><br>
+  <div *ngIf="errors">
+    <div>{{errors.errors.password}}</div>
+  </div>
+  <div *ngIf="password.invalid && (password.dirty || password.touched)">
+    <div *ngIf="password.errors.required">Password is required</div>
+    <div *ngIf="password.errors.minlength">
+      Minlength is {{password.errors.minlength.requiredLength}} characters. You have entered {{password.errors.minlength.actualLength}}.
+    </div>
+  </div>
+  <button type="submit">Signup</button>
+</form> -->
+
+
+
+<form class="form" (ngSubmit)="signup()">
+  <div class="header header-primary text-center">
+    <h4>Sign Up</h4>
+    <!-- <div class="social-line">
+      <a href="#pablo" class="btn btn-simple btn-just-icon">
+        <i class="fa fa-facebook-square"></i>
+      </a>
+      <a href="#pablo" class="btn btn-simple btn-just-icon">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="#pablo" class="btn btn-simple btn-just-icon">
+        <i class="fa fa-google-plus"></i>
+      </a>
+    </div> -->
+  </div>
+  <p class="text-divider">
+    <a routerLink="/login">Have an account? Signin</a>
+  </p>
+  <p class="text-divider" *ngIf="errors">{{errors.message}}</p>
+  <br>
+  <div class="content">
+
+    <div class="input-group">
+      <span class="input-group-addon">
+        <!-- <i class="material-icons">face</i> -->
+        <i class="fa fa-user"></i>
+      </span>
+      <input type="text" class="form-control" placeholder="Username ..." [(ngModel)]="user.username" name="username" #username="ngModel" required minlength="2">
+      <br>
+      <div *ngIf="errors">
+        <div>{{errors.errors.username}}</div>
+      </div>
+      <div *ngIf="username.invalid && (username.dirty || username.touched)">
+        <div *ngIf="username.errors.required">Username is required</div>
+        <div *ngIf="username.errors.minlength">
+          Minlength is {{username.errors.minlength.requiredLength}} characters. You have entered {{username.errors.minlength.actualLength}}.
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="input-group">
+      <span class="input-group-addon">
+        <!-- <i class="material-icons">email</i> -->
+        <i class="fa fa-envelope"></i>
+      </span>
+      <input class="form-control" placeholder="Email..." type="email" [(ngModel)]="user.email" name="email" #email="ngModel" email>
+      <br>
+      <div *ngIf="errors">
+        <div>{{errors.errors.email}}</div>
+      </div>
+      <div *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors.required">Email is required</div>
+        <div *ngIf="email.errors.email">Email is invalid</div>
+      </div>
+    </div>
+    <br>
+
+    <div class="input-group">
+      <span class="input-group-addon">
+        <!-- <i class="material-icons">lock_outline</i> -->
+        <i class="fa fa-lock"></i>
+      </span>
+      <input placeholder="Password..." class="form-control" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" minlength="6" required/>
+      <br>
+      <div *ngIf="errors">
+        <div>{{errors.errors.password}}</div>
+      </div>
+      <div *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.errors.required">Password is required</div>
+        <div *ngIf="password.errors.minlength">
+          Minlength is {{password.errors.minlength.requiredLength}} characters. You have entered {{password.errors.minlength.actualLength}}.
+        </div>
+      </div>
+    </div>
+
+    <!-- If you want to add a checkbox to this form, uncomment this code
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="optionsCheckboxes" checked>
+        Subscribe to newsletter
+      </label>
+    </div> -->
+  </div>
+  <div class="footer text-center">
+    <button type="submit" class="btn btn-simple btn-primary btn-lg">Get Started</button>
+  </div>
+</form>

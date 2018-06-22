@@ -1,7 +1,24 @@
 <!-- <a routerLink="/">Start</a><br>
 <a routerLink="/forecast">Forecast</a><br> -->
 
-<form class="search" (submit)="searchCity()">
-    <input [(ngModel)]="city" type="text" class="search__inp" placeholder="Search city" name="searchCity">
-    <button type="submit" class="search__btn">Search</button>
-</form>
+<div class="search">
+    <div class="search__form">
+        <input
+            (keyup)="searchCities($event)"
+            type="text"
+            class="search__inp"
+            placeholder="Search city"
+            name="searchCity"
+        >
+        <!-- <button type="submit" class="search__btn">Search</button> -->
+    </div>
+    <div class="search__res">
+        <div
+            class="search__res-item"
+            *ngFor="let c of cities | slice:0-5"
+            (click)="sendCity(c.name)"
+        >
+            {{c.name}}
+        </div>
+    </div>
+</div>

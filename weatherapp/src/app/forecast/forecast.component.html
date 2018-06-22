@@ -1,1 +1,37 @@
-<h1>{{city}}</h1>
+<div class="forecast">
+    <div class="forecast__card" *ngIf="weather">
+      <div class="forecast__card-load forecast__card-load--current" *ngIf="!weather">
+        <h3>Loading current weather ...</h3>
+      </div>
+      <div class="forecast-current forecast-current--{{pod}}-{{weather.weather[0].main | lowercase}}" *ngIf="weather">
+        <div class="forecast-current__main">
+          <div class="forecast-current__temp">
+            {{weather.main.temp | number:'1.0-0'}}&#176;
+          </div>
+          <div class="forecast-current__status">
+            {{weather.weather[0].main}}
+          </div>
+          <div class="forecast-current__additional">
+            <div class="forecast-current__additional-col">
+              <div class="forecast-current__additional-title">Humidity</div>
+              <div class="forecast-current__additional-val">{{weather.main.humidity}}%</div>
+            </div>
+            <div class="forecast-current__additional-col">
+              <div class="forecast-current__additional-title">Wind</div>
+              <div class="forecast-current__additional-val">{{weather.wind.speed}} m/s</div>
+            </div>
+          </div>
+        </div>
+        <div class="forecast-current__weather">
+          <img class="forecast-current__weather-icon" src="../../assets/icons/{{weather.weather[0].icon}}.svg" alt="">
+          <div class="forecast-current__weather-descr">{{weather.weather[0].description}}</div>
+        </div>
+        <div class="forecast-current__loc">
+            <h2>{{weather.name}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="forecast__card forecast__card--error" *ngIf="error">
+      <h1>{{error.message}}</h1>
+    </div>
+  </div>

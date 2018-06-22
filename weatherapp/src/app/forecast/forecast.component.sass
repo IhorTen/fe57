@@ -1,0 +1,96 @@
+.forecast
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    &__card
+        width: 70%
+        background-color: #000
+        border-radius: 2rem
+        overflow: hidden
+        box-shadow: 0 0 5rem -1.5rem #000
+        &--error
+            background-color: red
+    &-current
+        display: flex
+        justify-content: space-between
+        margin-bottom: 40px
+        padding: 4rem
+        color: #fff
+        &--d-clear
+            background-color: #FEDD32
+            color: #E85D6F
+        &--d-rain,
+        &--d-drizzle,
+        &--d-thunderstorm
+            background-color: #8395A2
+            color: #81D2DE
+        &--d-snow
+            background-color: #C0C6E4
+        &--d-mist
+            background-color: #bbb
+        &--d-clouds
+            background-color: #CDE7F1
+            color: #DB0D1F
+
+        &--n-clear
+            background-color: #302B80
+            color: #AAFEFD
+        &--n-rain,
+        &--n-drizzle,
+        &--n-thunderstorm
+            background-color: #000
+        &--n-mist
+            background-color: #112332
+        &--n-clouds,
+        &--n-snow
+            background-color: #2A3B51
+            color: #19A4AE
+
+        &__main,
+        &__weather,
+        &__loc
+            width: 33.333%
+            text-align: center
+
+        &__temp
+            font-weight: 500
+            font-size: 10rem
+        &__status
+            text-transform: uppercase
+            letter-spacing: .2rem
+            font-size: 1.8rem
+            font-weight: 400
+        &__additional
+            display: flex
+            margin-top: 2rem
+            &-col
+                width: 50%
+                &:nth-child(odd)
+                    border-right: 1px solid #fff
+            &-title
+                font-size: 1.6rem
+            &-val
+                font-weight: 400
+                margin-top: .7rem
+                font-size: 2rem
+        
+        &__weather,
+        &__loc
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+        &__weather
+            &-icon
+                height: 10rem
+                margin-bottom: 2rem
+            &-descr
+                font-weight: 400
+                font-size: 2rem
+                &::first-letter
+                    text-transform: uppercase
+        &__loc
+            letter-spacing: .2rem
+            font-weight: 500
+            font-size: 2rem

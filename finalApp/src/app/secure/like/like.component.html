@@ -1,0 +1,3 @@
+<div *ngIf="likes">
+  <span [class.liked]="likes.liked" (click)="like()">LIKE - {{likes.num}}</span>
+</div>

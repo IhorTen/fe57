@@ -1,0 +1,9 @@
+<div *ngIf="post">
+  <h4>{{post.title}}</h4>
+  <p>{{post.body}}</p>
+  <!-- <like
+    [likes]="likes"
+    (liking)="like()"
+  ></like> -->
+  <button (click)="deletePost()">Delete post</button>
+</div>

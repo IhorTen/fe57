@@ -1,5 +1,7 @@
 .search
-    display: flex
+    position: relative
+    &__form
+        display: flex
     &__inp
         border: none
         font-size: 2rem
@@ -14,3 +16,15 @@
         text-transform: uppercase
         font-weight: 400
         font-size: 1.4rem
+    &__res
+        position: absolute
+        top: 100%
+        left: 0
+        width: 100%
+        background-color: #fff
+        &-item
+            padding: 1rem
+            border-bottom: 1px solid #bbb;
+            &--isChosen
+                background-color: #000
+                color: #fff
